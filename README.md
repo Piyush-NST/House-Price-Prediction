@@ -1,135 +1,112 @@
-🏠 House Price Prediction (Machine Learning Project)
-📌 Project Overview
+# 🏠 House Price Prediction (Machine Learning Project)
 
+## 📌 Project Overview
 Predicting house prices is a key problem in real estate and data science. Accurate price estimation helps buyers, sellers, and investors make better decisions.
 
 In this project, I performed Exploratory Data Analysis (EDA) and built multiple Machine Learning regression models on a housing dataset to predict median house values based on various features such as location, income, and housing characteristics.
 
-🎯 Objectives
+---
 
-Perform EDA to understand patterns affecting house prices
+## 🎯 Objectives
+- Perform EDA to understand patterns affecting house prices  
+- Build and compare multiple regression models  
+- Evaluate models using metrics like RMSE, MAE, and R²  
+- Identify the most important features influencing house prices  
+- Select the best-performing model for prediction  
 
-Build and compare multiple regression models
+---
 
-Evaluate models using metrics like RMSE, MAE, and R²
+## 🗂 Dataset
+- **Source:** California Housing Dataset  
+- **File Used:** `housing.csv`  
 
-Identify the most important features influencing house prices
+### Features:
+- **Location:** longitude, latitude  
+- **House Details:** total_rooms, total_bedrooms, housing_median_age  
+- **Demographics:** population, households  
+- **Income:** median_income  
+- **Categorical:** ocean_proximity  
 
-Select the best-performing model for prediction
+- **Target Variable:** `median_house_value`
 
-🗂 Dataset
+---
 
-Source: California Housing Dataset
+## 🛠 Tech Stack
+- **Language:** Python  
 
-File Used: housing.csv
+### Libraries:
+- Pandas, NumPy  
+- Matplotlib, Seaborn  
+- Scikit-learn  
 
-Features:
+---
 
-Location: longitude, latitude
+## 🔎 Exploratory Data Analysis (EDA)
 
-House Details: total_rooms, total_bedrooms, housing_median_age
+### Key Insights:
+- Median income has a strong positive correlation with house prices  
+- Houses near the ocean (e.g., *NEAR BAY*, *NEAR OCEAN*) are more expensive  
+- Higher population density areas tend to have varied pricing  
+- Missing values were present in `total_bedrooms` and handled using imputation  
 
-Demographics: population, households
+### 📊 Visualizations Included:
+- Distribution of house prices  
+- Correlation heatmap  
+- Income vs House Price  
+- Location-based price comparisons  
 
-Income: median_income
+---
 
-Categorical: ocean_proximity
+## ⚙️ Data Preprocessing
+- Handled missing values using **SimpleImputer**  
+- Scaled numerical features using **StandardScaler**  
+- Encoded categorical features using **OneHotEncoder**  
+- Used **ColumnTransformer** to combine preprocessing steps  
 
-Target Variable: median_house_value
+---
 
-🛠 Tech Stack
+## 🤖 Models Implemented
 
-Language: Python
+### 1. Linear Regression
+- Simple baseline model  
+- Fast and interpretable  
 
-Libraries:
+### 2. Ridge Regression
+- Handles multicollinearity  
+- Better generalization than Linear Regression  
 
-Pandas, NumPy
+### 3. Lasso Regression
+- Performs feature selection  
+- Helps reduce overfitting  
 
-Matplotlib, Seaborn
+### 4. Random Forest Regressor
+- Captures non-linear relationships  
+- Provides strong performance  
 
-Scikit-learn
+### 5. Hist Gradient Boosting Regressor
+- Efficient and powerful boosting model  
+- Often gives best accuracy  
 
-🔎 Exploratory Data Analysis (EDA)
+---
 
-Key insights from the dataset:
+## 📈 Model Evaluation
+Used **Cross Validation (K-Fold)** with metrics:
 
-Median income has a strong positive correlation with house prices
+- RMSE (Root Mean Squared Error)  
+- MAE (Mean Absolute Error)  
+- R² Score  
 
-Houses near the ocean (e.g., NEAR BAY, NEAR OCEAN) are more expensive
+👉 Models were compared and sorted based on **lowest RMSE**
 
-Higher population density areas tend to have varied pricing
+---
 
-Missing values were present in total_bedrooms and handled using imputation
+## 🏆 Key Insights
+- Median income is the most important predictor of house prices  
+- Location plays a major role in determining value  
+- Tree-based models outperform linear models in accuracy  
+- Proper preprocessing significantly improves performance  
 
-📊 Visualizations included:
+---
 
-Distribution of house prices
-
-Correlation heatmap
-
-Income vs House Price
-
-Location-based price comparisons
-
-⚙️ Data Preprocessing
-
-Handled missing values using SimpleImputer
-
-Scaled numerical features using StandardScaler
-
-Encoded categorical features using OneHotEncoder
-
-Used ColumnTransformer to combine preprocessing steps
-
-🤖 Models Implemented
-1. Linear Regression
-
-Simple baseline model
-
-Fast and interpretable
-
-2. Ridge Regression
-
-Handles multicollinearity
-
-Better generalization than Linear Regression
-
-3. Lasso Regression
-
-Performs feature selection
-
-Helps reduce overfitting
-
-4. Random Forest Regressor
-
-Captures non-linear relationships
-
-Provides strong performance
-
-5. Hist Gradient Boosting Regressor
-
-Efficient and powerful boosting model
-
-Often gives best accuracy
-
-📈 Model Evaluation
-
-Used Cross Validation (K-Fold) with metrics:
-
-RMSE (Root Mean Squared Error)
-
-MAE (Mean Absolute Error)
-
-R² Score
-
-👉 Models were compared and sorted based on lowest RMSE
-
-🏆 Key Insights
-
-Median income is the most important predictor of house prices
-
-Location plays a major role in determining value
-
-Tree-based models outperform linear models in accuracy
-
-Proper preprocessing significantly improves performance
+## 🚀 Conclusion
+This project demonstrates how machine learning can be applied to real-world problems like house price prediction. By comparing multiple models and applying proper preprocessing, reliable and accurate predictions can be achieved.
